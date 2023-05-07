@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:ecommerce_app/commn/endPoints.dart';
 import 'package:ecommerce_app/commn/routes.dart';
 import 'package:ecommerce_app/network/dioHelper.dart';
+import 'package:ecommerce_app/screens/home/homeCubit.dart';
 import 'package:ecommerce_app/screens/login/loginStates.dart';
 import 'package:ecommerce_app/screens/home/homeScreen.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class LoginCubit extends Cubit<LoginStates> {
       print(value.data);
       emit(LoginSuccessState());
       Navigator.pushReplacementNamed(context, Routes.routeHome);
+
     }).catchError((error) {
       showMessage(error.toString(), context);
       emit(LoginErrorState(error.toString()));

@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => HomeCubit(),
+      create: (BuildContext context) => HomeCubit()..GetDataProducts(),
       child: BlocConsumer<HomeCubit, HomeStates>(
         listener: (context, state) {
           if (state is HomeSuccessState) print("done");
@@ -39,6 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottomRight: Radius.circular(50),
                     bottomLeft: Radius.circular(50)),
               ),
+            ),
+            floatingActionButton: FloatingActionButton(
+                onPressed: (){
+                  print("FloatingActionButton");
+                  Navigator.pushNamed(context, Routes.routeAddProduct);
+                },
+                child: Icon(Icons.add),
             ),
             body: HomeCubit.get(context).Products.isEmpty
                 ? const Center(child: CircularProgressIndicator())
@@ -118,8 +125,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class ProductArg {
   int id;
-
   int index;
-
   ProductArg({required this.id, required this.index});
 }

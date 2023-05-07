@@ -21,7 +21,7 @@ class HomeCubit extends Cubit<HomeStates> {
       Products = value.data;
       print(Products);
       print(Products.length);
-      print(Products[0]["title"]);
+      print(Products[19]["title"]);
       emit(HomeSuccessState());
     }).catchError((error) {
       print(error.toString());

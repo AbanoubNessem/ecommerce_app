@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/commn/routes.dart';
 import 'package:ecommerce_app/network/dioHelper.dart';
+import 'package:ecommerce_app/screens/addProduct/addProductScreen.dart';
 import 'package:ecommerce_app/screens/home/homeScreen.dart';
 import 'package:ecommerce_app/screens/login/loginScreen.dart';
 import 'package:ecommerce_app/screens/singleProduct/singleProductScreen.dart';
@@ -21,9 +22,10 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.routeLogin: (context)=> LoginScreen(),
         Routes.routeHome : (context)=> HomeScreen(),
-        Routes.routeSingleProduct : (context)=> SingleProductScreen()
+        Routes.routeSingleProduct : (context)=> SingleProductScreen(),
+        Routes.routeAddProduct : (context)=> AddProductScreen()
       },
-      initialRoute: Routes.routeLogin,
+      initialRoute: Routes.routeHome,
     );
   }
 }
