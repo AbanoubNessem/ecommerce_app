@@ -46,9 +46,7 @@ class CardItemWidget extends StatelessWidget {
                     .Products[index]["image"],
                 height: 80,
                 width: 80),
-            const SizedBox(
-              height: 10,
-            ),
+
             Text(
                 HomeCubit.get(context)
                     .Products[index]["title"],
