@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         Routes.routeSingleProduct : (context)=> SingleProductScreen(),
         Routes.routeAddProduct : (context)=> AddProductScreen()
       },
-      initialRoute: Routes.routeHome,
+      initialRoute: Routes.routeLogin,
     );
   }
 }
